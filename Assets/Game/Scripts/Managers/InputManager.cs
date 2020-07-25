@@ -10,13 +10,15 @@ namespace Hexagon
         Right = 1
     }
 
-    public class InputManager : Singleton<InputManager>
+    public class InputManager : MonoBehaviour
     {
-        public event Action<Swipe, Vector2> Swiped;
-        public event Action<Vector3> Tapped;
+        public event Action<Swipe, Vector2> OnSwiped;
+        public event Action<Vector3> OnTapped;
 
         public LeanFingerSwipe rightSwipe, leftSwipe;
         public LeanFingerTap tap;
+
+        public string selectableLayer;
 
         void Start()
         {
@@ -26,15 +28,13 @@ namespace Hexagon
         public void OnRightSwipe(LeanFinger finger)
         {
             Logger.Log("Right swipe");
-
-            Swiped?.Invoke(Swipe.Right, finger.GetStartWorldPosition(-10));
+            OnSwiped?.Invoke(Swipe.Right, finger.GetStartWorldPosition(-10));
         }
 
         public void OnLeftSwipe(LeanFinger finger)
         {
             Logger.Log("Left swipe");
-
-            Swiped?.Invoke(Swipe.Left, finger.GetStartWorldPosition(-10));
+            OnSwiped?.Invoke(Swipe.Left, finger.GetStartWorldPosition(-10));
         }
 
         public void OnTap(LeanFinger finger)
@@ -44,9 +44,10 @@ namespace Hexagon
 
             Logger.Log("WorldPos: " + worldPos.ToString());
 
-            if (Physics2D.OverlapPoint(worldPos))
+            int mask = 1 << LayerMask.NameToLayer(selectableLayer);
+            if (Physics2D.OverlapPoint(worldPos, mask))
             {
-                Tapped?.Invoke(worldPos);
+                OnTapped?.Invoke(worldPos);
             }
         }
     }
