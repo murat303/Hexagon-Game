@@ -2,19 +2,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+namespace Hexagon
 {
-    public string sceneName;
-    public int delay;
-
-    void Start()
+    public class LoadScene : MonoBehaviour
     {
-        StartCoroutine(Load());
-    }
+        public string sceneName;
+        public int delay;
 
-    IEnumerator Load()
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(sceneName);
+        void Start()
+        {
+            StartCoroutine(Load());
+        }
+
+        IEnumerator Load()
+        {
+            yield return new WaitForSeconds(delay);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
