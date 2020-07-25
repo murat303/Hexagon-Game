@@ -1,24 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 namespace Hexagon
 {
-    [CreateAssetMenu(fileName = "GameSettings", menuName = "Scriptables/GameSettings", order = 1)]
+    [CreateAssetMenu(fileName = "GameSettings", menuName = "ScriptableObjects/GameSettings", order = 1)]
     public class GameSettings : ScriptableObject
     {
         [Header("Settings")]
         public List<Color> Colors;
         public int BombLife;
-        public int BombScore;
+        public int BombScoreCheck;
         public int HexagonScore;
         public int ColumnCount;
         public int RowCount;
-        public float Size;
+        public float GridSize;
 
         [Header("Prefabs")]
         public GameObject Hexagon;
         public GameObject Bomb;
+        public ParticleSystem ParticleFx;
+        public TextMeshPro ScoreText;
 
         [Header("Debug")]
         public bool logsEnabled = true;
