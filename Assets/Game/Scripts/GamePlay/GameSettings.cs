@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Hexagon
 {
-    [CreateAssetMenu(fileName = "GameSettings", menuName = "ScriptableObjects/GameSettings", order = 1)]
+    [CreateAssetMenu(fileName = "GameSettings", menuName = "Scriptables/GameSettings", order = 1)]
     public class GameSettings : ScriptableObject
     {
         [Header("Settings")]
@@ -19,6 +19,9 @@ namespace Hexagon
         [Header("Prefabs")]
         public GameObject Hexagon;
         public GameObject Bomb;
+
+        [Header("Debug")]
+        public bool logsEnabled = true;
     }
 
 }

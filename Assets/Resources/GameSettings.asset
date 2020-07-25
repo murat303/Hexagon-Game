@@ -20,7 +20,7 @@ MonoBehaviour:
   - {r: 0.9215687, g: 0.7490196, b: 0.058823533, a: 1}
   BombLife: 7
   BombScore: 1000
-  HexagonScore: 15
+  HexagonScore: 5
   ColumnCount: 8
   RowCount: 9
   Size: 0.45

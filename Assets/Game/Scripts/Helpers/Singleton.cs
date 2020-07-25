@@ -90,7 +90,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     /// already have an instance. Lock was not necessary, but feels safe.
     /// </summary>
     public bool dontDestroy;
-    protected void Awake()
+    public virtual void Awake()
     {
         lock (Lock)
         {

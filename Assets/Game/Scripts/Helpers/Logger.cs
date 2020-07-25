@@ -4,11 +4,9 @@ namespace Hexagon
 {
     public class Logger
     {
-        static bool logEnabled = true;
-
         public static void Log(string Message)
         {
-            if (logEnabled) Debug.Log(Message);
+            //if (GameManager.Instance.settings.logsEnabled) Debug.Log(Message);
         }
     }
 }

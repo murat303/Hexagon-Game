@@ -18,6 +18,11 @@ namespace Hexagon
         public LeanFingerSwipe rightSwipe, leftSwipe;
         public LeanFingerTap tap;
 
+        void Start()
+        {
+            Input.multiTouchEnabled = false;
+        }
+
         public void OnRightSwipe(LeanFinger finger)
         {
             Logger.Log("Right swipe");
