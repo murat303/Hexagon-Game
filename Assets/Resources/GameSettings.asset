@@ -19,7 +19,7 @@ MonoBehaviour:
   - {r: 0.5921569, g: 0.34117648, b: 0.69803923, a: 1}
   - {r: 0.92156863, g: 0.7490196, b: 0.05882353, a: 1}
   BombLife: 8
-  BombScoreCheck: 15
+  BombScoreCheck: 1000
   HexagonScore: 5
   ColumnCount: 8
   RowCount: 9

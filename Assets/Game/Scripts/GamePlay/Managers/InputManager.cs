@@ -10,7 +10,7 @@ namespace Hexagon
         Right = 1
     }
 
-    public class InputManager : MonoBehaviour
+    public class InputManager : Singleton<InputManager>
     {
         public event Action<Swipe, Vector2> OnSwiped;
         public event Action<Vector3> OnTapped;

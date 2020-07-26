@@ -14,7 +14,6 @@ namespace Hexagon
 
         bool isSelectionActive = false;
         bool rotationActive;
-        InputManager inputManager;
         RotateController rotateController;
 
         [HideInInspector]
@@ -31,10 +30,9 @@ namespace Hexagon
         void Start()
         {
             rotateController = GetComponent<RotateController>();
-            inputManager = GetComponent<InputManager>();
 
-            inputManager.OnSwiped += InputManagerOnSwiped;
-            inputManager.OnTapped += InputManagerOnTapped;
+            InputManager.Instance.OnSwiped += InputManagerOnSwiped;
+            InputManager.Instance.OnTapped += InputManagerOnTapped;
         }
 
         public void GameOver()
