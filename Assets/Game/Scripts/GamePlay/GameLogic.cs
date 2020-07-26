@@ -20,6 +20,26 @@ namespace Hexagon
             return filtered[index];
         }
 
+        public static int CountForColor(Group group, Color foundColor)
+        {
+            int count = 0;
+
+            var (ac, bc, cc) = GetColors(group);
+
+            if (ac == foundColor) count++;
+            if (bc == foundColor) count++;
+            if (cc == foundColor) count++;
+
+            return count;
+        }
+
+        public static (Color hex1Color, Color hex2Color, Color hex3Color) GetColors(Group group)
+        {
+            var (a, b, c) = GridDatabase.Instance[group];
+            var (ah, bh, ch) = (a.GetComponent<Hexagon>(), b.GetComponent<Hexagon>(), c.GetComponent<Hexagon>());
+            return (ah.Color, bh.Color, ch.Color);
+        }
+
         public static bool Contains(Group g, CoordinatesOffset oc)
         {
             return g.Hexagon1.Equals(oc) || g.Hexagon2.Equals(oc) || g.Hexagon3.Equals(oc);

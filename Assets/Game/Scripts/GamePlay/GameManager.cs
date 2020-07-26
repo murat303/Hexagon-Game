@@ -39,7 +39,7 @@ namespace Hexagon
 
         public void GameOver()
         {
-
+            SceneManager.LoadScene("");
         }
 
         #region Visuals
@@ -78,6 +78,8 @@ namespace Hexagon
         {
             SelectedGroup = group;
             isSelectionActive = true;
+
+            Highlighter.Instance.Highlight(group);
         }
 
         void InputManagerOnSwiped(Swipe swipeDirection, Vector2 swipeOrigin)
@@ -95,6 +97,7 @@ namespace Hexagon
 
             yield return rotateController.Rotate(rotationDirection);
 
+            OnRotationCompleted?.Invoke(MatchController.Instance.MatchFound);
             rotationActive = false;
         }
 
@@ -131,6 +134,20 @@ namespace Hexagon
 
             return selectedGroup;
         } 
+        #endregion
+
+        #region Score
+        public void AddScore()
+        {
+            Score += settings.HexagonScore;
+
+            if (Score > 0 && Score % settings.BombScoreCheck == 0)
+            {
+                OnBombIsSpawnable?.Invoke();
+            }
+
+            OnScoreChanged?.Invoke(Score);
+        }
         #endregion
     }
 }
