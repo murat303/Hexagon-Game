@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
+using Utilities.Audio;
 
 namespace Hexagon
 {
@@ -22,6 +22,12 @@ namespace Hexagon
         public GameObject Bomb;
         public ParticleSystem ParticleFx;
         public TextMeshPro ScoreText;
+
+        [Header("Sound")]
+        public Sound soundRotate;
+        public Sound soundExplode;
+        public Sound soundBombExplode;
+        public Sound soundBombTimer;
 
         [Header("Debug")]
         public bool logsEnabled = true;

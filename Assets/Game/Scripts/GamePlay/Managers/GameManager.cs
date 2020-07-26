@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using DG.Tweening;
+using Utilities.Audio;
 
 namespace Hexagon
 {
@@ -35,9 +36,9 @@ namespace Hexagon
             InputManager.Instance.OnTapped += InputManagerOnTapped;
         }
 
-        public void GameOver()
+        public void Restart()
         {
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("Game");
         }
 
         #region Visuals
@@ -94,6 +95,9 @@ namespace Hexagon
             var rotationDirection = GetRotateDirection(swipeDirection, SelectedGroup.Center, swipeOrigin);
 
             yield return rotateController.Rotate(rotationDirection);
+
+            if(MatchController.Instance.MatchFound)
+                UIManager.Instance.AddMoveCount();
 
             OnRotationCompleted?.Invoke(MatchController.Instance.MatchFound);
             rotationActive = false;

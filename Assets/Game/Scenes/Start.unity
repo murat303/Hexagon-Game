@@ -202,7 +202,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 0}
+  m_BackGroundColor: {r: 0.92156863, g: 0.7490196, b: 0.05882353, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -308,8 +308,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: HEXFALL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f67f73ab32ef07d4e897632c4aec2006, type: 2}
-  m_sharedMaterial: {fileID: 988656532077224645, guid: f67f73ab32ef07d4e897632c4aec2006,
+  m_fontAsset: {fileID: 11400000, guid: ffb2bd1bfc5c2304c9aa85797cabeefb, type: 2}
+  m_sharedMaterial: {fileID: 5452816275851552165, guid: ffb2bd1bfc5c2304c9aa85797cabeefb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

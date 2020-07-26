@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Utilities.Audio;
 
 namespace Hexagon
 {
@@ -24,6 +25,8 @@ namespace Hexagon
         {
             for (int i = 0; i < 3; i++)
             {
+                SoundManager.Instance.PlaySound(GameManager.Instance.settings.soundRotate);
+
                 if(direction == RotationDirection.Clockwise)
                     yield return RotateClockwise();
                 else

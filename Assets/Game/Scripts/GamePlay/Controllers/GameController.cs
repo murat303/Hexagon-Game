@@ -16,7 +16,7 @@ namespace Hexagon
             bool areTherePossibleMoves = AreTherePossibleMoves();
 
             if (false == areTherePossibleMoves)
-                GameManager.Instance.GameOver();
+                UIManager.Instance.ShowGameOver();
         }
 
         bool AreTherePossibleMoves()

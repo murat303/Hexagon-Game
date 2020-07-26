@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using Utilities.Audio;
 
 namespace Hexagon
 {
@@ -30,7 +31,15 @@ namespace Hexagon
                 Lives--;
                 txtLive.text = Lives.ToString();
 
-                if (Lives <= 0) GameManager.Instance.GameOver();
+                if (Lives <= 0)
+                {
+                    SoundManager.Instance.PlaySound(GameManager.Instance.settings.soundBombExplode);
+                    UIManager.Instance.ShowGameOver();
+                }
+                else
+                {
+                    SoundManager.Instance.PlaySound(GameManager.Instance.settings.soundBombTimer);
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using Utilities.Audio;
 
 namespace Hexagon
 {
@@ -27,6 +28,7 @@ namespace Hexagon
             var targetScale = originalScale * 0.01f;
 
             GameManager.Instance.ShowParticleFx(transform.position, Color);
+            SoundManager.Instance.PlaySound(GameManager.Instance.settings.soundExplode);
 
             transform.DOScale(0, 0.5f).OnComplete(() =>
             {

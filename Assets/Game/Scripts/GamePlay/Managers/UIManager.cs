@@ -3,10 +3,16 @@ using UnityEngine;
 
 namespace Hexagon
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager : Singleton<UIManager>
     {
+        public GameObject screenGamePlay;
+        public GameObject screenGameOver;
+
         public TextMeshProUGUI txtScore;
         public TextMeshProUGUI txtMoves;
+        public TextMeshProUGUI txtGameOverScore;
+
+        int moveCount;
 
         void Start()
         {
@@ -16,6 +22,19 @@ namespace Hexagon
         void OnScoreChanged(int score)
         {
             txtScore.text = score.ToString();
+            txtGameOverScore.text = txtScore.text;
+        }
+
+        public void AddMoveCount()
+        {
+            moveCount++;
+            txtMoves.text = moveCount.ToString();
+        }
+
+        public void ShowGameOver()
+        {
+            screenGamePlay.SetActive(false);
+            screenGameOver.SetActive(true);
         }
     }
 }
