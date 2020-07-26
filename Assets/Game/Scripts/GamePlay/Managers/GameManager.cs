@@ -38,7 +38,7 @@ namespace Hexagon
 
         public void Restart()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Start");
         }
 
         #region Visuals
