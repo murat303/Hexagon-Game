@@ -18,7 +18,7 @@ namespace Hexagon
         public LeanFingerSwipe rightSwipe, leftSwipe;
         public LeanFingerTap tap;
 
-        public string selectableLayer;
+        public string gameLayer;
 
         void Start()
         {
@@ -44,7 +44,7 @@ namespace Hexagon
 
             Logger.Log("WorldPos: " + worldPos.ToString());
 
-            int mask = 1 << LayerMask.NameToLayer(selectableLayer);
+            int mask = 1 << LayerMask.NameToLayer(gameLayer);
             if (Physics2D.OverlapPoint(worldPos, mask))
             {
                 OnTapped?.Invoke(worldPos);

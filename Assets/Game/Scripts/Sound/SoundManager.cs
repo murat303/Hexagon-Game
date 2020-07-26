@@ -32,9 +32,8 @@ namespace Utilities.Audio
             inited = true;
             Resources.UnloadUnusedAssets();
         }
-        public override void Awake()
+        public void Awake()
         {
-            base.Awake();
             playedSounds = new Dictionary<string, int>();
             randomSounds = new List<Tuple<string, int>>();
 

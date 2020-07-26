@@ -91,6 +91,10 @@ namespace Hexagon
             hexagon1.transform.parent = parent;
             hexagon2.transform.parent = parent;
             hexagon3.transform.parent = parent;
+
+            hexagon1.GetComponent<Hexagon>().SetSortingOrder(sortingOrder);
+            hexagon2.GetComponent<Hexagon>().SetSortingOrder(sortingOrder);
+            hexagon3.GetComponent<Hexagon>().SetSortingOrder(sortingOrder);
         }
 
         void SetHexagon(GameObject hexagon, CoordinatesOffset coords)
