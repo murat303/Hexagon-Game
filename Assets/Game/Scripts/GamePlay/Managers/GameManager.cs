@@ -100,6 +100,8 @@ namespace Hexagon
                 UIManager.Instance.AddMoveCount();
 
             OnRotationCompleted?.Invoke(MatchController.Instance.MatchFound);
+
+            Highlighter.Instance.Activate();
             rotationActive = false;
         }
 
