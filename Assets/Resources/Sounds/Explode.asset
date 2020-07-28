@@ -16,5 +16,5 @@ MonoBehaviour:
   randomPlay: 0
   clips:
   - {fileID: 8300000, guid: 7e742195e72f0a04989f6d5f783fea78, type: 3}
-  volume: 1
+  volume: 0.8
   mixer: {fileID: -5237192326674433053, guid: ea7ace439a53fbc4394e37fe90d2fb25, type: 2}

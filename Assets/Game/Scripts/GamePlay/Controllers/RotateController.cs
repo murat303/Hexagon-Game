@@ -60,7 +60,7 @@ namespace Hexagon
             // Hex3 --> Hex1
             SetHexagon(hexagon3, GameManager.Instance.SelectedGroup.Hexagon1);
 
-            yield return StartCoroutine(Highlighter.Instance.Rotate(-120, 0.2f));
+            yield return StartCoroutine(Highlighter.Instance.Rotate(-120, 0.175f));
             SetSelectedHexagons(GridBuilder.Instance.transform, -1);
         }
 
@@ -81,7 +81,7 @@ namespace Hexagon
             // Hex2 --> Hex1
             SetHexagon(hexagon2, GameManager.Instance.SelectedGroup.Hexagon1);
 
-            yield return StartCoroutine(Highlighter.Instance.Rotate(120, 0.2f));
+            yield return StartCoroutine(Highlighter.Instance.Rotate(120, 0.175f));
             SetSelectedHexagons(GridBuilder.Instance.transform, -1);
         }
 
