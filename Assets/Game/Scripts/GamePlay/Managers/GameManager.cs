@@ -101,7 +101,6 @@ namespace Hexagon
 
             OnRotationCompleted?.Invoke(MatchController.Instance.MatchFound);
 
-            Highlighter.Instance.Activate();
             rotationActive = false;
         }
 

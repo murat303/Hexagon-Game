@@ -24,6 +24,7 @@ namespace Hexagon
                 yield return new WaitForSeconds(.25f);
                 yield return CheckMatches();
                 yield return new WaitForSeconds(.25f);
+                Highlighter.Instance.Activate();
                 MatchFound = true;
             }
         }
